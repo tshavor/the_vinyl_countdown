@@ -1,0 +1,18 @@
+     <h1>Todo List</h1>
+          <div class="row">
+          <div ng-repeat="item in items | filter: {task: searchText.search}">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="col-xs-1"><input type="checkbox" name=""/></div>
+                <div class="col-xs-6"><a ng-href="#/items/view/{{item.id}}">{{item.task}}</a></div>
+                <div class="col-xs-2">{{item.dueDate}}</div>
+                <div class="col-xs-1">{{item.assignedTo}}</div>
+                <!-- <div class="col-xs-1"><a ng-href="#/items/edit/{{item.id}}">Edit</a></div> NOT USING ANYMORE SINCE WE HAVE ADDED THE BUTTON AT THE BOTTOM OF THE FORM-->
+                <!--Changed this from ng-click to ng-href, only diff appears to be whether or not text appears to be a link-->
+                <div class="col-xs-1"><button class="btn btn-danger" ng-click="itemDelete(item.id)">X</button></div>
+              </div>
+            </div>
+          </div>
+
+  <!-- To iterate over an object, instead of an array: <ng-repeat="(key, item) in items"> -->
+
