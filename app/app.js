@@ -1,5 +1,5 @@
 "use strict";
-var app = angular.module("TodoApp", ["ngRoute"])
+var app = angular.module("VinylCountdown", ["ngRoute"])
 .constant('FirebaseURL','https://the-vinyl-countdown.firebaseio.com/');
 //Module takes two arguments: name and array of dependencies
 //Module has pseudo-global scope
@@ -53,12 +53,6 @@ app.config(function($routeProvider){
             controller: "ItemViewCtrl",
             resolve: {isAuth}
         }).
-
-        // when('/items/edit/:itemId', {
-        //     templateUrl: 'partials/edit-task.html',
-        //     controller: 'ItemEditCtrl',
-        //     resolve: {isAuth}
-        // }).
 
         when("/items/view/:itemId/edit", {
             templateUrl: "partials/item-form.html",
