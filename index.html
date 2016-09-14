@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Todo App</title>
+    <title>VinylCountdown</title>
     <link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <!-- TODO: Initialize our app (registers the module as main app in which controllers can function) app directive = module-->
-<body ng-app="TodoApp">
+<body ng-app="VinylCountdown">
   <div ng-controller="TopCtrl">
     <div ng-include=" 'partials/navbar.html' "> <!--  This is ng-include rather than ng-view because navbar is mostly consistent on page, unlike ng-view, which allows routing. Each view looks like a separate section of webpage or separate webpage-->
     </div>
@@ -26,7 +26,10 @@
         </div>
       </div>
   </div>
-  <!-- TODO: Add a nav controller -->
+
+<!-- USE MATERIALIZE STYLING ONCE APP IS COMPLETE! -->
+  <div ng-include="'/partials/footer.html'"></div>
+
 
 <!--3rd party libs -->
 <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>

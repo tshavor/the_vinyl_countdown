@@ -1,4 +1,3 @@
-// topCtrl.js- DO I REALLY NEED THIS???
 "use strict";
 
 app.controller("TopCtrl", function($scope, $location, $window, AuthFactory) {
