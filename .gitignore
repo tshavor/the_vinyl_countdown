@@ -2,3 +2,4 @@ bower components
 node_modules
 web-api-auth-examples
 /lib
+app/values/fb-creds.js

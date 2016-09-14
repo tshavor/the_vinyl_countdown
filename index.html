@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>The Vinyl Countdown</title>
-	<link rel="stylesheet" href="/styles/app.css">
-	<!-- <link rel="stylesheet" href="/lib/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"> -->
-
+    <title>Todo App</title>
+    <link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+       <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
+<!-- TODO: Initialize our app (registers the module as main app in which controllers can function) app directive = module-->
+<body ng-app="TodoApp">
+  <div ng-controller="TopCtrl">
+    <div ng-include=" 'partials/navbar.html' "> <!--  This is ng-include rather than ng-view because navbar is mostly consistent on page, unlike ng-view, which allows routing. Each view looks like a separate section of webpage or separate webpage-->
+    </div>
+      <!-- TODO: Add a controller for our todo list -->
+      <div ng-controller="TodoCtrl">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+            <!-- Let's call a js function from our HTML. wat? -->
+          </div>
+        </div>
+       </div>
 
-<h1>The Vinyl Countdown!!!</h1>
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 main-container">
+            <div class="col-xs-12" ng-view></div> <!-- directive that allows routing, will inject things into and out of the div, url will look as if we are changing pages, but we're injecting partials instead need hashMarks in routes (#/items/new = route) -->
+        </div>
+      </div>
+  </div>
+  <!-- TODO: Add a nav controller -->
 
+<!--3rd party libs -->
+<script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js">
+</script>
+<script type="text/javascript" src="lib/bower_components/angular/angular.min.js "></script>
+<script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="/lib/bower_components/firebase/firebase.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/controllers/searchDatabaseCtrl.js" type="text/javascript"></script>
-<script src="/controllers/loginRegisterCtrl.js" type="text/javascript"></script>
-<script src="/controllers/savedVinylCtrl.js" type="text/javascript"></script>
-<script src="/factories/loginRegisterFactory.js" type="text/javascript"></script>
-<script src="/factories/searchDatabaseFactory.js" type="text/javascript"></script>
-<script src="/app/app.js" type="text/javascript"></script>
+<!-- App specific files -->
+<script type="text/javascript" src="/app/app.js"></script>
+<!-- providers -->
+<script type="text/javascript" src="/app/values/fb-creds"></script>
+<script type="text/javascript" src="/factories/ItemFactory.js"></script>
+<script type="text/javascript" src="/factories/FilterFactory.js"></script>
+<script type="text/javascript" src="/factories/AuthFactory.js"></script>
+<!-- controllers -->
+<script type="text/javascript" src="/controllers/TodoCtrl.js"></script>
+<script type="text/javascript" src="/controllers/NavCtrl.js"></script>
+<script type="text/javascript" src="/controllers/LoginCtrl.js"></script>
+<script type="text/javascript" src="/controllers/ItemListCtrl.js"></script>
+<script type="text/javascript" src="/controllers/TopCtrl.js"></script>
+<script type="text/javascript" src="/controllers/ItemNewCtrl.js"></script>
+<script type="text/javascript" src="/controllers/ItemViewCtrl.js"></script>
+<script type="text/javascript" src="/controllers/ItemEditCtrl.js"></script>
 </body>
 </html>
-
-
-
-
-
-

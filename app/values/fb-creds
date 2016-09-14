@@ -1,0 +1,8 @@
+"use strict";
+
+app.constant("FBCreds", {
+	key: "AIzaSyBgeyOv6cFIUkwG-mk58LPGgKlhpbisyMA",
+	authDomain: "the-vinyl-countdown.firebaseapp.com"
+}
+
+	);
