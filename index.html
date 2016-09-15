@@ -12,7 +12,7 @@
     <div ng-include=" 'partials/navbar.html' "> <!--  This is ng-include rather than ng-view because navbar is mostly consistent on page, unlike ng-view, which allows routing. Each view looks like a separate section of webpage or separate webpage-->
     </div>
       <!-- TODO: Add a controller for our todo list -->
-      <div ng-controller="TodoCtrl">
+      <!-- <div ng-controller="TodoCtrl"> -->
         <div class="row">
           <div class="col-xs-6 col-xs-offset-3">
             <!-- Let's call a js function from our HTML. wat? -->
@@ -28,7 +28,7 @@
   </div>
 
 <!-- USE MATERIALIZE STYLING ONCE APP IS COMPLETE! -->
-  <div ng-include="'/partials/footer.html'"></div>
+  <!-- <div ng-include="'/partials/footer.html'"></div> -->
 
 
 <!--3rd party libs -->
@@ -43,17 +43,14 @@
 <script type="text/javascript" src="/app/app.js"></script>
 <!-- providers -->
 <script type="text/javascript" src="/app/values/fb-creds"></script>
-<script type="text/javascript" src="/factories/ItemFactory.js"></script>
-<script type="text/javascript" src="/factories/FilterFactory.js"></script>
 <script type="text/javascript" src="/factories/AuthFactory.js"></script>
+<script type="text/javascript" src="/factories/SearchItemFactory.js"></script>
+<script type="text/javascript" src="/factories/SearchDatabaseFactory.js"></script>
 <!-- controllers -->
-<script type="text/javascript" src="/controllers/TodoCtrl.js"></script>
 <script type="text/javascript" src="/controllers/NavCtrl.js"></script>
+<script type="text/javascript" src="/controllers/myCollection.js"></script>
 <script type="text/javascript" src="/controllers/LoginCtrl.js"></script>
-<script type="text/javascript" src="/controllers/ItemListCtrl.js"></script>
 <script type="text/javascript" src="/controllers/TopCtrl.js"></script>
-<script type="text/javascript" src="/controllers/ItemNewCtrl.js"></script>
-<script type="text/javascript" src="/controllers/ItemViewCtrl.js"></script>
-<script type="text/javascript" src="/controllers/ItemEditCtrl.js"></script>
+<script type="text/javascript" src="/controllers/SearchCtrl.js"></script>
 </body>
 </html>

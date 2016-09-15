@@ -6,7 +6,7 @@
       "dueDate": "12/5/17",
       "assignedTo": "Greg",
       "location": "Joe's house",
-      "urgency": "low",
+      // "urgency": "low",
       "dependencies": "sunshine, clippers, hat, water, headphones"
     },
     {
@@ -16,7 +16,7 @@
       "dueDate": "12/5/15",
       "assignedTo": "Christina",
       "location": "NSS",
-      "urgency": "high",
+      // "urgency": "high",
       "dependencies": "wifi, tissues, vodka"
     },
     {
@@ -26,7 +26,7 @@
       "dueDate": "5/21/16",
       "assignedTo": "Joe",
       "location": "Porch of lakefront cabin",
-      "urgency": "medium",
+      // "urgency": "medium",
       "dependencies": "hammock, silence"
     }
   ]
