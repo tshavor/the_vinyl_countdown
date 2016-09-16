@@ -21,11 +21,19 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
     $scope.searchDatabase = function(vinylToSearch) {
         SearchDatabaseFactory.vinylList(vinylToSearch).then(function(vinylData) {
             console.log("in the controller i see vinyl data...", vinylData);
+            for (var property in vinylData) {
+                console.log("property", property);
+                if (vinylData.hasOwnProperty(property)){
+                    property.replace(/[#\[\]@\$/.]/gi, "");
+                }
+                console.log ("cleaned vinylData", vinylData);
+
+            }
             $scope.vinyls = vinylData;
             // if ($scope.vinyls !== vinylData) {
             //     alert("nothing here fool!");
             // }
-            console.log("vinylscope", $scope.vinyls)
+            // console.log("vinylscope", $scope.vinyls)
         })
 
     }
