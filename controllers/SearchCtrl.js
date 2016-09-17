@@ -20,20 +20,28 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
 
     $scope.searchDatabase = function(vinylToSearch) {
         SearchDatabaseFactory.vinylList(vinylToSearch).then(function(vinylData) {
-            console.log("in the controller i see vinyl data...", vinylData);
-            for (var property in vinylData) {
-                console.log("property", property);
-                if (vinylData.hasOwnProperty(property)){
-                    property.replace(/[#\[\]@\$/.]/gi, "");
-                }
-                console.log ("cleaned vinylData", vinylData);
+            // console.log("in the controller i see vinyl data...", vinylData);
 
-            }
-            $scope.vinyls = vinylData;
-            // if ($scope.vinyls !== vinylData) {
-            //     alert("nothing here fool!");
-            // }
-            // console.log("vinylscope", $scope.vinyls)
+////////////////BUILDING A NEW ALBUM OBJECT///////////////////////////////
+        var revisedAlbumList= [];
+
+        for (var i = 0; i < vinylData.results.albummatches.album.length; i++) {
+            var temp= vinylData.results.albummatches.album[i];
+            let newRecord = {
+                AlbumName: temp.name,
+                Artist: temp.artist,
+                ImgUrl: temp.image[3]['#text'],
+                Uid: temp.uid,
+                AlbumID: temp.mbid
+            };
+
+            revisedAlbumList.push(newRecord);
+        }
+
+        console.log("revisedAlbumList", revisedAlbumList);
+
+            // $scope.vinyls = vinylData;
+
         })
 
     }
@@ -47,15 +55,12 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
         chosenvinyl.name = clickedvinyl.name;
         chosenvinyl.title = clickedvinyl.title;
         chosenvinyl.urls = clickedvinyl.urls;
-        chosenvinyl.images = clickedvinyl.images;
-        chosenvinyl.description = clickedvinyl.description;
         chosenvinyl.id = clickedvinyl.id;
-        chosenvinyl.thumbnail = clickedvinyl.thumbnail;
         chosenvinyl.uid = AuthFactory.isAuthenticated();
-        chosenvinyl.date = Date();
+
         // console.log("ObjFromFirebase", )
 
-        console.log("comscopid", $scope.vinyl)
+        // console.log("comscopid", $scope.vinyl)
         // SearchDatabaseFactory.postNewvinyl($scope.vinyl)
         SearchDatabaseFactory.postNewvinyl(chosenvinyl)
         // .then(function(response) {

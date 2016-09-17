@@ -6,25 +6,30 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
 
 // DONE!
     let vinylList = (searchText) => {
+        // let results = [];
         return $q(function(resolve, reject) {
 
             $http.get(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${searchText}&api_key=ff6d0bcea5dbfbb8b4f27afac1df217a&format=json&limit=21`)
             .success(function(vinylData) {
             // I am getting the correct OBJECT from LastFM!
-                // console.log("vinyl results from LastFM", vinylData);
-                // resolve(vinylData.data.results);
-                // console.log("name", vinylData.data.results)
+                console.log("vinyl results from LastFM", vinylData);
                 resolve(vinylData);
-                console.log("name", vinylData.results.albummatches.album);
+                console.log("name", vinylData)
+                // for (var key in vinylData) {
+                //     results.push(vinylData[key])
+                //     console.log('these are your results within the for loop', results, 'what you are looking for is an array that contains the global result object')
+                // resolve(results);
+                })
+                // console.log("name", vinylData.results.albummatches.album);
                 // SUCCESS!!!
 
-            })
 
             .error(function(error) {
                 reject(error);
-            });
+            })
         });
     };
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // GETS USER VINYL COLLECTION FROM FirebaseURL
