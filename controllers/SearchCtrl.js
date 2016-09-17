@@ -4,7 +4,7 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
     // where is this function (getUser) being called?
     $scope.uid = AuthFactory.isAuthenticated();
     $scope.vinyl = {};
-
+    $scope.vinylToSearch = "";
 
     $scope.$on('onRepeatLast', function(scope, element, attrs) {
         $('.materialboxed').materialbox();
@@ -12,17 +12,17 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
 
 // this may be a materialize thing...
     // (function() {
-
     //     $(".button-collapse").sideNav();
-
-    // })();
+   // })();
 
 
     $scope.searchDatabase = function(vinylToSearch) {
+        // console.log ("vinylToSearch", vinylToSearch);
         SearchDatabaseFactory.vinylList(vinylToSearch).then(function(vinylData) {
+
             // console.log("in the controller i see vinyl data...", vinylData);
 
-////////////////BUILDING A NEW ALBUM OBJECT///////////////////////////////
+//BUILDING A NEW ALBUM OBJECT:
         var revisedAlbumList= [];
 
         for (var i = 0; i < vinylData.results.albummatches.album.length; i++) {
@@ -31,22 +31,20 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
                 AlbumName: temp.name,
                 Artist: temp.artist,
                 ImgUrl: temp.image[3]['#text'],
-                Uid: temp.uid,
                 AlbumID: temp.mbid
             };
-
+            // pushing the contents of newRecord into revisedAlbumList
             revisedAlbumList.push(newRecord);
         }
-
+        // SUCCESS!!!!
+        $scope.albumList= revisedAlbumList;
+        // console.log("albumList", $scope.albumList);
         console.log("revisedAlbumList", revisedAlbumList);
 
-            // $scope.vinyls = vinylData;
-
         })
-
     }
 
-
+//////////////////////////////////////////////////////////////////////////////
     $scope.savevinyl = function($indexValueofSumthin, savedVinyls, ObjFromFirebase) {
 
         let clickedvinyl = $scope.vinyls[$indexValueofSumthin]
