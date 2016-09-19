@@ -31,9 +31,9 @@ app.config(function($routeProvider){
             controller: "SearchCtrl"
         }).
 
-        when("/myCollection", {
-            templateUrl:"partials/myCollection.html",
-            controller: "myCollection"
+        when("/savedVinyl", {
+            templateUrl:"partials/savedVinyl.html",
+            controller: "savedVinylCtrl"
         }).
 
         otherwise("/");

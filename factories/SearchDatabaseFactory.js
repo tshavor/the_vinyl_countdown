@@ -28,10 +28,10 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
     let getvinyl = (uid) => {
         return $q(function(resolve, reject) {
 
-            $http.get(`https://vinylsapp-db242.firebaseio.com/vinyls/.json?orderBy="uid"&equalTo="${uid}"`)
+            $http.get(`https://the-vinyl-countdown.firebaseio.com/vinyl/.json?orderBy="id"&equalTo="${uid}"`)
                 .success(function(vinylData) {
                     resolve(vinylData);
-                    console.log("vinylData", vinylData)
+                    // console.log("vinylData", vinylData)
                 })
                 .error(function(error) {
                     reject(error);
@@ -47,14 +47,15 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
             // use stringify here to convert
 
             .success(function(ObjFromFirebase) {
-                console.log("comDat", ObjFromFirebase.name)
-                let chosenvinylId = ObjFromFirebase.name;
+                // console.log("comDat", ObjFromFirebase.name)
+                // let chosenvinylId = ObjFromFirebase.name;
             })
         });
     };
 
 // DELETES VINYL FROM COLLECTION
-    var deletevinyl = (vinyl, FirebaseURL) => {
+
+    var deletevinyl = (vinyl) => {
         console.log("this is a deleted vinyl", vinyl);
         return $q((resolve, reject) => {
             $http.delete(`https://the-vinyl-countdown.firebaseio.com/vinyl/${vinyl}.json`)
@@ -66,8 +67,6 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
                 });
         });
     };
-
-    /////////////////**************typeahead*************\\\\\\\\\\\\\\\\\\\
 
     return {
         vinylList: vinylList,

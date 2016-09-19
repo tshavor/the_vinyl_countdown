@@ -1,10 +1,9 @@
 'use strict';
 app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, AuthFactory) {
     $scope.vinyls = [];
-    // where is this function (getUser) being called?
-    $scope.uid = AuthFactory.isAuthenticated();
     $scope.vinyl = {};
     $scope.vinylToSearch = "";
+    var revisedAlbumList= null;
 
     $scope.$on('onRepeatLast', function(scope, element, attrs) {
         $('.materialboxed').materialbox();
@@ -17,6 +16,10 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
 
 
     $scope.searchDatabase = function(vinylToSearch) {
+    $scope.uid = $scope.$parent.getUser();
+    console.log ("$scope.uid", $scope.uid);
+    // where is this function (getUser) being called?
+
         // console.log ("vinylToSearch", vinylToSearch);
         SearchDatabaseFactory.vinylList(vinylToSearch).then(function(vinylData) {
 
@@ -45,30 +48,13 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
     }
 
 //////////////////////////////////////////////////////////////////////////////
-    $scope.savevinyl = function($indexValueofSumthin, savedVinyls, ObjFromFirebase) {
+    $scope.saveVinyl = function(album) {
+        console.log("you want to save this vinyl!");
 
-        let clickedvinyl = $scope.vinyls[$indexValueofSumthin]
-        let chosenvinyl = {};
-        console.log("$indexValueofSumthin", $indexValueofSumthin)
-        chosenvinyl.name = clickedvinyl.name;
-        chosenvinyl.title = clickedvinyl.title;
-        chosenvinyl.urls = clickedvinyl.urls;
-        chosenvinyl.id = clickedvinyl.id;
-        chosenvinyl.uid = AuthFactory.isAuthenticated();
+        album.id= $scope.uid;
+        console.log("album", album);
+        SearchDatabaseFactory.postNewvinyl(album);
 
-        // console.log("ObjFromFirebase", )
-
-        // console.log("comscopid", $scope.vinyl)
-        // SearchDatabaseFactory.postNewvinyl($scope.vinyl)
-        SearchDatabaseFactory.postNewvinyl(chosenvinyl)
-        // .then(function(response) {
-        //     $location.path("/partials/savedVinyls");
-        //     SearchDatabaseFactory.getvinyl();
-        //     console.log("savedVinyls", savedVinyls)
-        // });
-        console.log("chosenvinyl", chosenvinyl)
     };
-
-
 
 })

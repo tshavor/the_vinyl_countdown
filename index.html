@@ -2,14 +2,14 @@
 <html>
 <head>
     <title>VinylCountdown</title>
-    <link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="/lib/bower_components/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <!-- TODO: Initialize our app (registers the module as main app in which controllers can function) app directive = module-->
 <body ng-app="VinylCountdown">
-  <div ng-controller="TopCtrl">
+  <div ng-controller="topCtrl">
     <div ng-include=" 'partials/navbar.html' "> <!--  This is ng-include rather than ng-view because navbar is mostly consistent on page, unlike ng-view, which allows routing. Each view looks like a separate section of webpage or separate webpage-->
     </div>
       <!-- TODO: Add a controller for our todo list -->
@@ -19,7 +19,7 @@
             <!-- Let's call a js function from our HTML. wat? -->
           </div>
         </div>
-       </div>
+
 
         <div class="row">
           <div class="col-xs-10 col-xs-offset-1 main-container">
@@ -29,7 +29,7 @@
   </div>
 
 <!-- USE MATERIALIZE STYLING ONCE APP IS COMPLETE! -->
-  <!-- <div ng-include="'/partials/footer.html'"></div> -->
+  <div ng-include="'/partials/footer.html'"></div>
 
 
 <!--3rd party libs -->
@@ -49,9 +49,9 @@
 <script type="text/javascript" src="/factories/SearchDatabaseFactory.js"></script>
 <!-- controllers -->
 <script type="text/javascript" src="/controllers/NavCtrl.js"></script>
-<script type="text/javascript" src="/controllers/myCollection.js"></script>
+<script type="text/javascript" src="/controllers/savedVinylCtrl.js"></script>
 <script type="text/javascript" src="/controllers/LoginCtrl.js"></script>
-<script type="text/javascript" src="/controllers/TopCtrl.js"></script>
+<script type="text/javascript" src="/controllers/topCtrl.js"></script>
 <script type="text/javascript" src="/controllers/SearchCtrl.js"></script>
 </body>
 </html>
