@@ -1,24 +1,31 @@
+  main {
+    flex: 1 0 auto;
+  }
+
 .searchBox {
   padding-top: 9px; }
 
 body {
   background-color: #461D7C;
   opacity: 4;
-  margin-top: 2%; }
+  margin-top: 2%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;}
 
 .card-image {
-  box-shadow: 0 2px 10px gold; }
+  box-shadow: 0 2px 10px black; }
 
-.amber {
-  position: relative; }
+/*.amber {
+  position: relative; }*/
 
 .card {
   height: 460px;
   overflow: visible; }
 
-.spiderman {
+/*.spiderman {
   height: 290px;
-  width: 100%; }
+  width: 100%; }*/
 
 .content-area {
   position: absolute;
@@ -45,6 +52,13 @@ body {
   color: blue; }
 
 label {
-  color: yellow; }
+  color: red; }
 
 /*# sourceMappingURL=main.css.map */
+
+/*body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }*/
+

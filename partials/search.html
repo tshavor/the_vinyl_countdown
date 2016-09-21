@@ -2,11 +2,13 @@
 <div class="row">
   <form id="databaseSearch remote">
 
-    <input type="text" ng-model="vinylToSearch" placeholder="Search albums by name..." class="col s9 offset-s1 white-text typeahead">
+    <input type="text" ng-model="vinylToSearch" placeholder="Search albums by name..." class="col s7 offset-s1 white-text typeahead">
 
 
-    <button class="waves-effect waves-light btn-floating purple darken-1 btn"
+    <button class="waves-effect waves-light btn-floating yellow darken-3 btn"
     ng-click="searchDatabase(vinylToSearch)"><i class="material-icons">search</i></button>
+
+
 
   </form>
 </div>
@@ -18,15 +20,16 @@
         <div class="col s3" ng-repeat="album in albumList" on-last-repeat>
           <div class="card">
             <div class="card-image">
-              <img class="materialboxed" width="300" ng-src="{{album.ImgUrl}}">
-              <span class="album-name"><p>{{album.AlbumName}}</p></span>
-              <span class="artist-name"><p>{{album.Artist}}</p></span>
-              <button class="btn waves-effect waves-light red" type="submit" ng-click="saveVinyl(album)">Add To Your Collection</button>
-               <!-- <button class="btn waves-effect waves-light" type="submit" ng-click="saveVinyl(album)" name="action">Add To Your Collection -->
-    <!-- <i class="material-icons right">send</i>
-  </button> -->
+              <img class="materialboxed hoverable" width="350" ng-src="{{album.ImgUrl}}">
             </div>
-
+            <div class="album-details">
+              <span class="album-name"><p>Album Name: {{album.AlbumName}}</p></span>
+              <span class="artist-name"><p>Artist: {{album.Artist}}</p></span>
+              <button class="waves-effect waves-light btn .right-align" type="submit" ng-click="saveVinyl(album)">Add To Your Collection</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 

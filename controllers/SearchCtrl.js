@@ -10,8 +10,8 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
     });
 
 // this may be a materialize thing...
-    // (function() {
-    //     $(".button-collapse").sideNav();
+   //  (function() {
+   //      $(".button-collapse").sideNav();
    // })();
 
 
@@ -34,7 +34,8 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
                 AlbumName: temp.name,
                 Artist: temp.artist,
                 ImgUrl: temp.image[3]['#text'],
-                AlbumID: temp.mbid
+                AlbumID: temp.mbid,
+                AlbumNotes:""
             };
             // pushing the contents of newRecord into revisedAlbumList
             revisedAlbumList.push(newRecord);
@@ -50,11 +51,14 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
 //////////////////////////////////////////////////////////////////////////////
     $scope.saveVinyl = function(album) {
         console.log("you want to save this vinyl!");
-
         album.id= $scope.uid;
         console.log("album", album);
         SearchDatabaseFactory.postNewvinyl(album);
 
+        // Materialize.toast(message, displayLength, className, completeCallback);
+        // Materialize.toast('I am a toast!', 4000); // 4000 is the duration of the toast
+
     };
 
-})
+});
+

@@ -14,7 +14,8 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
             .then(function(response) {
                 // console.log("response", response)
                 Object.keys(response).forEach(function(key) {
-                    response[key].id = key;
+                    // response[key].id = key;
+                    response[key].noteId= key;
                     items.push(response[key]);
 
                 });
@@ -28,7 +29,8 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
     $scope.deletevinylCall = function(vinyl) {
 
                 console.log("you clicked delete", vinyl)
-        SearchDatabaseFactory.deletevinyl(vinyl.id)
+        SearchDatabaseFactory.deletevinyl(vinyl.noteId)
+
             .then((chosenvinyl) => {
                 $scope.vinyls = chosenvinyl;
                 $route.reload();
@@ -38,5 +40,20 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
                         $scope.vinyls = chosenvinyl;
                     });
             });
+    };
+
+    ////////added to update notes on cards/////////////////////
+    $scope.updateVinyl = function(album) {
+        console.log("adding notes to album");
+        // album.id= $scope.uid;
+        let AlbumID = album.noteId;
+        console.log("albumID", AlbumID);
+        console.log("album", album);
+        SearchDatabaseFactory.updateItem(AlbumID, album)
+        .then(() =>{
+          console.log("Tom is so awesome! He won't take a fucking compliment tho")
+        })
+        // .then (do whatever)
+
     };
 });

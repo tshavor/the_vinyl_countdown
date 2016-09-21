@@ -4,7 +4,6 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
 //the $q injects an Angular promise
 // this grabs it from the api
 
-// DONE!
     let vinylList = (searchText) => {
         // let results = [];
         return $q(function(resolve, reject) {
@@ -13,8 +12,7 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
             .success(function(vinylData) {
             // I am getting the correct OBJECT from LastFM!
                 resolve(vinylData);
-                // console.log("name", vinylData)
-
+                console.log("name", vinylData);
                 })
                 // console.log("name", vinylData.results.albummatches.album);
                 // SUCCESS!!!
@@ -31,7 +29,6 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
             $http.get(`https://the-vinyl-countdown.firebaseio.com/vinyl/.json?orderBy="id"&equalTo="${uid}"`)
                 .success(function(vinylData) {
                     resolve(vinylData);
-                    // console.log("vinylData", vinylData)
                 })
                 .error(function(error) {
                     reject(error);
@@ -39,16 +36,30 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
         });
     };
 
+/////////////////////////////////////////////////////////////////////
+// Adding listener notes to each collected album
+   let updateItem = (AlbumID, editedAlbum) => {
+    return $q( (resolve, reject) => {
+        console.log('inside updateItem, here is the editedAlbum', editedAlbum)
+        $http.patch(`https://the-vinyl-countdown.firebaseio.com/vinyl/${AlbumID}.json`, angular.toJson(editedAlbum))
+        .success( (itemObject) => {
+            resolve(itemObject);
+        })
+        .error( (error) => {
+            reject(error);
+        });
+    });
+    };
+
+
 //////////////////////////////////////////////////////////////////////////////////
 // *****ADDS SELECTED VINYL TO YOUR COLLECTION-
     let postNewvinyl = (chosenvinyl) => {
         return $q(function(resolve, reject) {
             $http.post(`https://the-vinyl-countdown.firebaseio.com/vinyl/.json`, chosenvinyl)
-            // use stringify here to convert
 
             .success(function(ObjFromFirebase) {
-                // console.log("comDat", ObjFromFirebase.name)
-                // let chosenvinylId = ObjFromFirebase.name;
+
             })
         });
     };
@@ -68,11 +79,14 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
         });
     };
 
+
     return {
         vinylList: vinylList,
         getvinyl: getvinyl,
+        updateItem: updateItem,
         postNewvinyl: postNewvinyl,
         deletevinyl: deletevinyl
 
     };
+
 });

@@ -1,4 +1,5 @@
 "use strict";
+
 var app = angular.module("VinylCountdown", ["ngRoute"])
 .constant('FirebaseURL','https://the-vinyl-countdown.firebaseio.com/');
 

@@ -1,49 +1,21 @@
 
 <!-- THIS IS WHAT I WANT TO DISPLAY IN THE USER COLLECTION! -->
 <div class="row">
-        <div class="col s3" ng-repeat="album in albumList" on-last-repeat>
-          <div class="card">
-            <div class="card-image">
-              <img class="materialboxed" width="300" ng-src="{{album.ImgUrl}}">
-              <span class="album-name"><p>{{album.AlbumName}}</p></span>
-              <span class="artist-name"><p>{{album.Artist}}</p></span>
-               <!-- <span class="uid"><p>{{album.id}}</p></span> -->
-              <!-- <button type="button" ng-click="saveVinyl(album)">Delete From Your Collection?</button> -->
-              <button class="btn waves-effect waves-light red" type="submit" ng-click="deletevinylCall(album)">Delete From Your Collection?</button>
-            </div>
+   <div class="clearfix" ng-if="$index % 3 == 0"></div>
+  <div class="col s3" ng-repeat="album in albumList">
+    <div class="card">
+      <div class="card-image">
+        <img class="materialboxed" width="650" ng-src="{{album.ImgUrl}}">
+        <span class="album-name"><p>Artist: {{album.AlbumName}}</p></span>
+        <span class="artist-name"><p>Album: {{album.Artist}}</p></span>
+        <span class= "listener notes"><input type="text" name="" value="" placeholder="Listener Notes" ng-model= "album.AlbumNotes"></span>
 
-<!-- //////////////////////////////////////////////////// -->
-              <!-- <p id="description" tabindex="0">{{savedVinyl.description}}</p> -->
-                                          <!-- fake modal -->
-              <!-- <div class="fakeModal" ng-init="checked = false"> -->
-                                        <!-- delete button -->
-              <!-- <a class="btn-floating btn-medium waves-effect waves-light red" ng-click="deletevinylCall(savedVinyl)"><i class="material-icons">not_interested</i></a -->
-                                  <!-- <!- delete button -->
-                 <!--  <label class="saveLabel">
-                    <input type="checkbox" ng-model="checked" />
-                    ZAP
-                  </label>
-                  <div class="content-area sample-show-hide" ng-show="checked">
-                    {{savedVinyl.description}} -->
-                    <!-- <button type="button" ng-init="checked = false" ng-model="checked">button</button> -->
-                     <!-- <label>
-                    <input type="checkbox" ng-model="checked" />
-                    dismiss
-                  </label>
-                  </div>
-              </div> -->
-                        <!-- fake modal -->
-
-<!-- <br>
-            </div>
-<div> -->
-  <!-- {{savedVinyl.date}} -->
-<!-- </div> -->
-
-            <!-- <div class="card-action">
-              <a ng-href="{{savedVinyl.urls[0].url}}">wiki</a>
-            </div> -->
-
-       <!--    </div>
-        </div>
+        <button class="btn waves-effect waves-light yellow darken-3" type="submit" ng-click="deletevinylCall(album)">Delete From Your Collection?</button>
+        <button class="btn waves-effect waves-light yellow darken-3" type="submit" ng-click="updateVinyl(album)">Add Listener Notes?</button>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
