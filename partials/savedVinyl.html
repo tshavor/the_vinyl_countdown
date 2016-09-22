@@ -1,21 +1,21 @@
-
 <!-- THIS IS WHAT I WANT TO DISPLAY IN THE USER COLLECTION! -->
 <div class="row">
-   <div class="clearfix" ng-if="$index % 3 == 0"></div>
-  <div class="col s3" ng-repeat="album in albumList">
-    <div class="card">
-      <div class="card-image">
-        <img class="materialboxed" width="650" ng-src="{{album.ImgUrl}}">
-        <span class="album-name"><p>Artist: {{album.AlbumName}}</p></span>
-        <span class="artist-name"><p>Album: {{album.Artist}}</p></span>
-        <span class= "listener notes"><input type="text" name="" value="" placeholder="Listener Notes" ng-model= "album.AlbumNotes"></span>
-
-        <button class="btn waves-effect waves-light yellow darken-3" type="submit" ng-click="deletevinylCall(album)">Delete From Your Collection?</button>
-        <button class="btn waves-effect waves-light yellow darken-3" type="submit" ng-click="updateVinyl(album)">Add Listener Notes?</button>
-      </div>
+    <div class="clearfix" ng-if="$index % 3 == 0"></div>
+    <div class="col s3" ng-repeat= "album in albumList | filter: searchText.search">
+        <div class="card">
+            <div class="card-image">
+                <img class="materialboxed" width="650" ng-src="{{album.ImgUrl}}">
+            </div>
+            <div>
+                <span class="album-name"><p>Artist: {{album.Artist}}</p></span>
+                <span class="artist-name"><p>Album: {{album.AlbumName}}</p></span>
+                <span class="listener notes"><input type="text" placeholder="Listener Notes" ng-model= "album.AlbumNotes"></span>
+            </div>
+            <div class="card-action">
+                <button class="btn waves-effect waves-light yellow darken-3" type="submit" ng-click="deletevinylCall(album)">Delete</button>
+                <button class="btn waves-effect waves-light yellow darken-3" type="submit" ng-click="updateVinyl(album)">Add Notes</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
-
-<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>

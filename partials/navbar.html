@@ -1,8 +1,11 @@
-<nav class="navbar navbar-default" ng-controller="NavCtrl">
+<nav class="navbar navbar-default grey darken-4" ng-controller="NavCtrl">
   <div class="container-fluid">
-    <div class="nav-wrapper yellow darken-3">
+    <div class="nav-wrapper">
       <a href="#" class="brand-logo">The Vinyl Countdown</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+<input type="text" class = "form-control" placeholder="Search for..." ng-model= "searchText.search">
+          </li>
           <li ng-show="!$parent.isLoggedIn"><a ng-href="#/login">Login</a></li>
           <li ng-show="$parent.isLoggedIn"><a ng-href="#/search">Search</a></li>
           <li ng-show="$parent.isLoggedIn"><a ng-href="#/savedVinyl">My Collection</a></li>
@@ -11,5 +14,6 @@
     </div>
   </div
 </nav>
+
 
 

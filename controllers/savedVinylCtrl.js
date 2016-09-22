@@ -1,6 +1,8 @@
 "use strict";
 
-app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, SearchDatabaseFactory, $route) {
+app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, SearchDatabaseFactory, $route, SearchTermData) {
+
+    $scope.searchText = SearchTermData;
 
     $scope.$on('onRepeatLast', function(scope, element, attrs) {
         $('.materialboxed').materialbox();
