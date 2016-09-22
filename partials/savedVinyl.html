@@ -9,11 +9,11 @@
             <div>
                 <span class="album-name"><p>Artist: {{album.Artist}}</p></span>
                 <span class="artist-name"><p>Album: {{album.AlbumName}}</p></span>
-                <span class="listener notes"><input type="text" placeholder="Listener Notes" ng-model= "album.AlbumNotes"></span>
+                <div class="listener-notes "><input type="text" placeholder="Add Some Listener Notes Here..." ng-model= "album.AlbumNotes"></div>
             </div>
             <div class="card-action">
-                <button class="btn waves-effect waves-light yellow darken-3" type="submit" ng-click="deletevinylCall(album)">Delete</button>
-                <button class="btn waves-effect waves-light yellow darken-3" type="submit" ng-click="updateVinyl(album)">Add Notes</button>
+                <button class="btn btn-info amber" type="submit" ng-click="deletevinylCall(album)">Delete</button>
+                <button class="btn btn-info amber" type="submit" ng-click="updateVinyl(album)">Add Notes</button>
             </div>
         </div>
     </div>

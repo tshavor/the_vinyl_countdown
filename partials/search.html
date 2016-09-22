@@ -5,7 +5,7 @@
     <input type="text" ng-model="vinylToSearch" placeholder="Search albums by name..." class="col s7 offset-s1 white-text typeahead">
 
 
-    <button class="waves-effect waves-light btn-floating yellow darken-3 btn"
+    <button class="btn btn-info amber waves-effect-light"
     ng-click="searchDatabase(vinylToSearch)"><i class="material-icons">search</i></button>
 
 <!-- <img src="http://thumbs3.picclick.com/d/w1600/pict/302033375866_/The-Beatles-I-Feel-Fine-7-VINYL-RECORD.jpg" alt=""> -->
@@ -25,7 +25,7 @@
             <div class="album-details">
               <span class="album-name"><p>Album Name: {{album.AlbumName}}</p></span>
               <span class="artist-name"><p>Artist: {{album.Artist}}</p></span>
-              <button class="waves-effect waves-light btn" type="submit" ng-click="saveVinyl(album)">Add To Your Collection</button>
+              <button class="btn btn-info amber" type="submit" ng-click="saveVinyl(album)">Add To Your Collection</button>
             </div>
           </div>
         </div>

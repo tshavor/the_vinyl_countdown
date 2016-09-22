@@ -19,10 +19,8 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
                     // response[key].id = key;
                     response[key].noteId= key;
                     items.push(response[key]);
-
                 });
                 $scope.albumList = items;
-
             });
     };
     $scope.loadSavedvinyl();
@@ -53,9 +51,8 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
         console.log("album", album);
         SearchDatabaseFactory.updateItem(AlbumID, album)
         .then(() =>{
-          console.log("Tom is so awesome! He won't take a fucking compliment tho")
+
         })
-        // .then (do whatever)
 
     };
 });
