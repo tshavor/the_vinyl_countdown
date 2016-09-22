@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("TopCtrl", function($scope, $location, $window, AuthFactory) {
+app.controller("topCtrl", function($scope, $location, $window, AuthFactory) {
   $scope.isLoggedIn = false;
   let currentUser = null;
 
@@ -22,7 +22,7 @@ app.controller("TopCtrl", function($scope, $location, $window, AuthFactory) {
       //setting something to true (the digest cycle - dirty checking - has somethingo on the scope obj changed? If it is, it will update the view) becuase this is happening inside the function, it's not an angular function so we have to force the digest cycle to happen manually to update the view - $scope.$apply()
   });
 
-  $scope.getUser = function() {
+  $scope.getUser = () => {
     return currentUser;
   };
 
@@ -33,5 +33,6 @@ app.controller("TopCtrl", function($scope, $location, $window, AuthFactory) {
       console.log("logged out", data);
     });
   };
+
 
 });

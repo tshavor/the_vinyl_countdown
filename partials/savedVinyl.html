@@ -1,0 +1,25 @@
+<!-- THIS IS WHAT I WANT TO DISPLAY IN THE USER COLLECTION! -->
+<div class="row">
+    <div class="clearfix" ng-if="$index % 3 == 0"></div>
+    <div class="col s3" ng-repeat= "album in albumList | filter: searchText.search">
+        <div class="card">
+            <div class="card-image">
+                <img class="materialboxed" width="650" ng-src="{{album.ImgUrl}}">
+            </div>
+            <div>
+                <span class="album-name"><p>Artist: {{album.Artist}}</p></span>
+                <span class="artist-name"><p>Album: {{album.AlbumName}}</p></span>
+                <div class="listener-notes "><input type="text" placeholder="Add Some Listener Notes Here..." ng-model= "album.AlbumNotes"></div>
+            </div>
+            <div class="card-action">
+                <button class="btn btn-info amber" type="submit" ng-click="deletevinylCall(album)">Delete</button>
+                <button class="btn btn-info amber" type="submit" ng-click="updateVinyl(album)">Add Notes</button>
+            </div>
+
+            <div class= "notebox">
+            <p>Here is some crap to put in my boxes!</p>
+            </div>
+        </div>
+    </div>
+</div>
+

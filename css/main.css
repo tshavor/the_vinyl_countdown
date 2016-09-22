@@ -1,4 +1,66 @@
+  /*main {
+    flex: 1 0 auto;
+  }*/
+
 .searchBox {
   padding-top: 9px; }
 
-/*# sourceMappingURL=main.css.map */
+body {
+  background-color: #0B3C5D;
+  opacity: 4;
+  margin-top: 2%;
+  /*display: flex;
+  min-height: 100vh;
+  flex-direction: column;*/}
+
+.card-image {
+  box-shadow: 0 2px 10px gold; }
+
+/*.amber {
+  position: relative; }*/
+
+.card {
+  height: 750px;
+  overflow: visible;
+  color: white;
+  background-color: #448AFF }
+
+/*.spiderman {
+  height: 290px;
+  width: 100%; }*/
+
+.content-area {
+  position: absolute;
+  top: 50px;
+  left: -5px;
+  width: 400px;
+  height: auto;
+  z-index: 5;
+  /*background-color: powderblue;*/
+  margin-top: 10px;
+  padding: 15px;
+  box-shadow: 8px 12px 18px black;
+  transition: ease 3.5s;
+  transition-duration: 1s; }
+
+.content-area-show-hide {
+  transition: ease 1.5s;
+  transition-duration: 1s; }
+
+.content-area-show-hide.ng-hide {
+  opacity: 0; }
+
+.saveLabel {
+  color: blue; }
+
+/*label {
+  color: red; }*/
+
+.listener-notes{
+  overflow: scroll;
+}
+
+.notebox{
+  border: 5px dashed;
+  border-color: red;
+}

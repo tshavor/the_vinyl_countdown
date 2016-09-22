@@ -1,3 +1,77 @@
 .searchBox {
     padding-top: 9px;
 }
+
+body {
+	background-color: #461D7C;
+	opacity: 4;
+	margin-top: 2%;
+}
+.card-image {
+	box-shadow: 0 2px 10px black;
+}
+.amber {
+	position: relative;
+}
+.card {
+
+	height: 460px;
+	overflow: visible;
+}
+
+.spiderman {
+	height: 290px;
+    width: 100%;
+}
+
+.card-action {
+
+}
+// #description{
+// 	font-size: .25em;
+// }
+// #description:focus{
+// 	zoom: 400%;
+// 	outline: none;
+// }
+
+// #savedDescription{
+// 	font-size: .25em;
+// }
+// #savedDescription:focus{
+// 	zoom: 400%;
+// 	outline: none;
+// }
+
+// fake modal
+.content-area {
+	  position:absolute;
+  top:50px;
+  left:-5px;
+	width: 400px;
+	height: auto;
+	z-index: 5;
+  // border: 1px solid black;
+  background-color: powderblue;
+  margin-top: 10px;
+  padding: 15px;
+  box-shadow: 8px 12px 18px black;
+  transition: ease 3.5s;
+  transition-duration: 1s;
+}
+
+.content-area-show-hide {
+  transition: ease 1.5s;
+  transition-duration: 1s;
+}
+.content-area-show-hide.ng-hide {
+  opacity: 0;
+}
+
+// fake modal
+.saveLabel {
+	color: blue;
+}
+label {
+	color: red;
+}
