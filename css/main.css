@@ -1,3 +1,9 @@
+
+html {
+font-family: 'Fjalla One', sans-serif;
+  }
+
+
   /*main {
     flex: 1 0 auto;
   }*/
@@ -20,14 +26,10 @@ body {
   position: relative; }*/
 
 .card {
-  height: 750px;
+  height: 600px;
   overflow: visible;
   color: white;
   background-color: #448AFF }
-
-/*.spiderman {
-  height: 290px;
-  width: 100%; }*/
 
 .content-area {
   position: absolute;
@@ -43,15 +45,15 @@ body {
   transition: ease 3.5s;
   transition-duration: 1s; }
 
-.content-area-show-hide {
+/*.content-area-show-hide {
   transition: ease 1.5s;
-  transition-duration: 1s; }
+  transition-duration: 1s; }*/
 
-.content-area-show-hide.ng-hide {
+/*.content-area-show-hide.ng-hide {
   opacity: 0; }
 
 .saveLabel {
-  color: blue; }
+  color: blue; }*/
 
 /*label {
   color: red; }*/
@@ -64,3 +66,7 @@ body {
   border: 5px dashed;
   border-color: red;
 }
+.toast{
+  background-color: #448AFF;
+}
+
