@@ -9,15 +9,15 @@
             <div>
                 <span class="album-name"><p>Artist: {{album.Artist}}</p></span>
                 <span class="artist-name"><p>Album: {{album.AlbumName}}</p></span>
-                <div class="listener-notes "><input type="text" placeholder="Add Some Listener Notes Here..." ng-model= "album.AlbumNotes"></div>
-            </div>
+                <!-- <div class="listener-notes "><input type="text" placeholder="Add Some Listener Notes Here..." ng-model= "album.AlbumNotes"></div>
+            </div> -->
+                <textarea ng-model= "album.AlbumNotes" rows="4" cols="50" placeholder="Add Some Listener Notes Here...">
+
+</textarea>
+
             <div class="card-action">
                 <button class="btn btn-info amber" type="submit" ng-click="deletevinylCall(album)">Delete</button>
                 <button class="btn btn-info amber" type="submit" ng-click="updateVinyl(album)">Add Notes</button>
-            </div>
-
-            <div class= "notebox">
-            <p>Here is some crap to put in my boxes!</p>
             </div>
         </div>
     </div>

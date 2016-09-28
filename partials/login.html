@@ -1,14 +1,19 @@
 <section class=" row auth-form">
-  <h4 class= "col m6 white-text"><i>An App for Serious Vinyl Collectors</i></h4>
+  <h4 class= "col m6 white-text"><i>An App for Serious Vinyl Collectors...</i></h4>
 
   <div class= "col m6" white-text>
-    <input type="text" autofocus="true" ng-model="account.email" placeholder="wtf@gmail.com" style="font-size: 1em ">
+    <input type="text" autofocus="true" ng-model="account.email" placeholder="wtf@gmail.com" style="font-size: 1em">
   </div>
   <p></p>
   <div class= "col m6" white-text>
     <input type="password" class= white-text ng-model="account.password" placeholder="Password..." style="font-size: 1em">
-    <button class="btn btn-info amber" ng-click="login()">Login</button>
-    <button class="btn btn-info amber" ng-click="register()">Register</button>
+
+    <button class="btn btn-info waves-effect waves-light green lighten-1" type= "submit" ng-click="login()">Login</button>
+
+    <button class="btn btn-info waves-effect waves-light red" type= "submit" ng-click="register()">Register</button>
+
+
+  </button>
   </div>
   <p></p>
   </div>

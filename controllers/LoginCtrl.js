@@ -8,6 +8,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory) {
 
   $scope.register = () => {
     console.log("you clicked register");
+    showToast('You registered!', 3000)
     AuthFactory.createUser({
       email: $scope.account.email,
       password: $scope.account.password
@@ -23,9 +24,12 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory) {
 
   $scope.login = () => {
     console.log("you clicked login");
+
     AuthFactory.loginUser($scope.account)
     .then( (data) => {
-      if (data) {
+      if (data) {showToast('You logged in!', 3000)
+        // adding toast info to controller
+
       $window.location.href = "#/search";
     } else {
       $window.location.href = "#/login";

@@ -10,20 +10,18 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
     });
 
 // this may be a materialize thing...
-   //  (function() {
-   //      $(".button-collapse").sideNav();
-   // })();
-
+    (function() {
+        $(".button-collapse").sideNav();
+   })();
 
     $scope.searchDatabase = function(vinylToSearch) {
     $scope.uid = $scope.$parent.getUser();
+        // showToast('You clicked search!', 3000)
     console.log ("$scope.uid", $scope.uid);
-    // where is this function (getUser) being called?
 
         // console.log ("vinylToSearch", vinylToSearch);
         SearchDatabaseFactory.vinylList(vinylToSearch).then(function(vinylData) {
 
-            // console.log("in the controller i see vinyl data...", vinylData);
 
 //BUILDING A NEW ALBUM OBJECT:
         var revisedAlbumList= [];
@@ -40,10 +38,15 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
             // pushing the contents of newRecord into revisedAlbumList
             revisedAlbumList.push(newRecord);
         }
-        // SUCCESS!!!!
+
         $scope.albumList= revisedAlbumList;
-        // console.log("albumList", $scope.albumList);
         console.log("revisedAlbumList", revisedAlbumList);
+
+// for materialbox images to appear dynamically
+$(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+//////////////////////////////////////////////
 
         })
     }
@@ -54,8 +57,6 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
         album.id= $scope.uid;
         console.log("album", album);
         SearchDatabaseFactory.postNewvinyl(album);
-
-
 
     };
 

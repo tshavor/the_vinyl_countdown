@@ -11,6 +11,7 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
     let uid= $scope.$parent.getUser();
     $scope.loadSavedvinyl = function() {
 
+
         let items = [];
         SearchDatabaseFactory.getvinyl(uid)
             .then(function(response) {
@@ -22,8 +23,15 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
                 });
                 $scope.albumList = items;
             });
+
+
     };
     $scope.loadSavedvinyl();
+        // for materialbox images to appear dynamically
+$(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+//////////////////////////////////////////////
 
 
     $scope.deletevinylCall = function(vinyl) {
@@ -38,6 +46,7 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
                 SearchDatabaseFactory.getvinyl()
                     .then((chosenvinyl) => {
                         $scope.vinyls = chosenvinyl;
+                // showToast('You deleted me!', 3000)
                     });
             });
     };
