@@ -26,10 +26,12 @@ body {
   position: relative; }*/
 
 .card {
-  height: 600px;
+  height: 550px;
   overflow: visible;
   color: white;
-  background-color: #448AFF }
+  background-color: #448AFF;
+  box-shadow: 0 2px 10px gold;
+   }
 
 .content-area {
   position: absolute;
@@ -60,12 +62,12 @@ body {
 
 .listener-notes{
   overflow: scroll;
+  /*border-color: red;*/
+  border-radius: 5px;
+  border-width: 2px;
+  background-color: #0B3C5D;
 }
 
-.notebox{
-  border: 5px dashed;
-  border-color: red;
-}
 .toast{
   background-color: #448AFF;
 }

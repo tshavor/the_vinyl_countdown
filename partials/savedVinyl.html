@@ -4,20 +4,18 @@
     <div class="col s3" ng-repeat= "album in albumList | filter: searchText.search">
         <div class="card">
             <div class="card-image">
-                <img class="materialboxed" width="650" ng-src="{{album.ImgUrl}}">
+                <img class="materialboxed hoverable" width="650" ng-src="{{album.ImgUrl}}">
             </div>
             <div>
-                <span class="album-name"><p>Artist: {{album.Artist}}</p></span>
+                <span class="album-name"><p><b>Artist: {{album.Artist}}</b></p></span>
                 <span class="artist-name"><p>Album: {{album.AlbumName}}</p></span>
-                <!-- <div class="listener-notes "><input type="text" placeholder="Add Some Listener Notes Here..." ng-model= "album.AlbumNotes"></div>
-            </div> -->
-                <textarea ng-model= "album.AlbumNotes" rows="4" cols="50" placeholder="Add Some Listener Notes Here...">
 
-</textarea>
+                <textarea class= "listener-notes" ng-model= "album.AlbumNotes" rows="5" cols="50" placeholder="Add Some Listener Notes Here..." grey-text>
+                </textarea>
 
             <div class="card-action">
-                <button class="btn btn-info amber" type="submit" ng-click="deletevinylCall(album)">Delete</button>
-                <button class="btn btn-info amber" type="submit" ng-click="updateVinyl(album)">Add Notes</button>
+                <button class="btn btn-info waves-effect waves-light amber black-text z-depth-3" type="submit" ng-click="deletevinylCall(album)">Delete Card?</button>
+                <button class="btn btn-info waves-effect waves-light amber black-text z-depth-3" type="submit" ng-click="updateVinyl(album)">Add Notes?</button>
             </div>
         </div>
     </div>
