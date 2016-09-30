@@ -5,7 +5,7 @@
     <input type="text" ng-model="vinylToSearch" placeholder="Search albums by name..." class="col s7 offset-s1 white-text typeahead">
 
 
-    <button class="btn-floating btn-large waves-effect waves-light amber"
+    <button class="btn-floating btn-large waves-effect waves-light amber black-text"
     ng-click="searchDatabase(vinylToSearch)"><i class="material-icons">search</i></button>
 
   </form>
@@ -21,9 +21,9 @@
               <img class="materialboxed hoverable" width="650" ng-src="{{album.ImgUrl}}">
             </div>
             <div class="album-details">
-              <span class="album-name"><p>Album Name: {{album.AlbumName}}</p></span>
               <span class="artist-name"><p>Artist: {{album.Artist}}</p></span>
-              <button class="btn btn-info amber" type="submit" style= "display:block; margin:0 auto;" ng-click="saveVinyl(album)">Add To Your Collection</button>
+              <span class="album-name"><p>Album Name: {{album.AlbumName}}</p></span>
+              <button class="btn btn-info waves-effect waves-light amber black-text z-depth-3" type="submit" style= "display:block; margin:0 auto;" ng-click="saveVinyl(album)">Add To Your Collection</button>
             </div>
           </div>
         </div>

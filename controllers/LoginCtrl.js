@@ -8,7 +8,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory) {
 
   $scope.register = () => {
     console.log("you clicked register");
-    showToast('You registered!', 3000)
+    // showToast('You registered!', 3000)
     AuthFactory.createUser({
       email: $scope.account.email,
       password: $scope.account.password

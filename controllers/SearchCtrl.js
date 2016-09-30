@@ -5,11 +5,8 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
     $scope.vinylToSearch = "";
     var revisedAlbumList= null;
 
-    $scope.$on('onRepeatLast', function(scope, element, attrs) {
-        $('.materialboxed').materialbox();
-    });
 
-// this may be a materialize thing...
+// this is a materialize thing...
     (function() {
         $(".button-collapse").sideNav();
    })();
@@ -42,7 +39,7 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
         $scope.albumList= revisedAlbumList;
         console.log("revisedAlbumList", revisedAlbumList);
 
-// for materialbox images to appear dynamically
+// for materialbox images to appear dynamically?
 $(document).ready(function(){
     $('.materialboxed').materialbox();
   });
