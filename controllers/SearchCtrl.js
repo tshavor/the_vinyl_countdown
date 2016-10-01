@@ -34,13 +34,13 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
             // pushing the contents of newRecord into revisedAlbumList
             revisedAlbumList.push(newRecord);
         }
-// for materialbox images to appear dynamically?
-    $(document).ready(function(){
-    $('.materialboxed').materialbox();
 
         $scope.albumList= revisedAlbumList;
         console.log("revisedAlbumList", revisedAlbumList);
 
+// for materialbox images to appear dynamically?
+    $(document).ready(function(){
+    $('.materialboxed').materialbox();
   });
 
 
