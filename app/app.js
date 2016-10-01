@@ -50,15 +50,18 @@ app.config(function($routeProvider){
 
 // this is the configuration for the Materialize "toast" messages that will show on user
 // click events:
-      // function showToast(message, duration){
-      //    Materialize.toast(message, duration);
-      // }
+      function showToast(message, duration){
+         Materialize.toast(message, duration, 'rounded');
+      }
       // function showToast1(message, duration){
       //    Materialize.toast('<i>'+ message + '</i>', duration);
       // }
-      function showToast2(message, duration){
-         Materialize.toast(message, duration, 'rounded');
-      }
+      // function showToast2(message, duration){
+      //    Materialize.toast(message, duration, 'rounded');
+      // }
+      // function showToast3(message, duration){
+      //    Materialize.toast(message, duration, 'rounded');
+      // }
 
 ///////////////////////////////////////////////////////////////////////
 
