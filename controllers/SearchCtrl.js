@@ -13,7 +13,6 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
 
     $scope.searchDatabase = function(vinylToSearch) {
     $scope.uid = $scope.$parent.getUser();
-        // showToast('You clicked search!', 3000)
     console.log ("$scope.uid", $scope.uid);
 
         // console.log ("vinylToSearch", vinylToSearch);
@@ -35,15 +34,15 @@ app.controller("SearchCtrl", function($scope, SearchDatabaseFactory, $location, 
             // pushing the contents of newRecord into revisedAlbumList
             revisedAlbumList.push(newRecord);
         }
+// for materialbox images to appear dynamically?
+    $(document).ready(function(){
+    $('.materialboxed').materialbox();
 
         $scope.albumList= revisedAlbumList;
         console.log("revisedAlbumList", revisedAlbumList);
 
-// for materialbox images to appear dynamically?
-$(document).ready(function(){
-    $('.materialboxed').materialbox();
   });
-//////////////////////////////////////////////
+
 
         })
     }
@@ -51,6 +50,7 @@ $(document).ready(function(){
 //////////////////////////////////////////////////////////////////////////////
     $scope.saveVinyl = function(album) {
         console.log("you want to save this vinyl!");
+        showToast('You saved me!', 3000)
         album.id= $scope.uid;
         console.log("album", album);
         SearchDatabaseFactory.postNewvinyl(album);

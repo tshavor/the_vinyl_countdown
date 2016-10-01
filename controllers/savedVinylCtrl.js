@@ -37,6 +37,8 @@ $(document).ready(function(){
     $scope.deletevinylCall = function(vinyl) {
 
                 console.log("you clicked delete", vinyl)
+                showToast('You deleted me!', 3000)
+
         SearchDatabaseFactory.deletevinyl(vinyl.noteId)
 
             .then((chosenvinyl) => {
@@ -59,7 +61,7 @@ $(document).ready(function(){
         console.log("albumID", AlbumID);
         console.log("album", album);
         SearchDatabaseFactory.updateItem(AlbumID, album)
-        .then(() =>{
+        .then(() =>{showToast('You added notes!', 3000)
 
         })
 
