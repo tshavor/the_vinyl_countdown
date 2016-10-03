@@ -15,6 +15,12 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
         let items = [];
         SearchDatabaseFactory.getvinyl(uid)
             .then(function(response) {
+
+        // for materialbox images to appear dynamically
+$(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+//////////////////////////////////////////////
                 // console.log("response", response)
                 Object.keys(response).forEach(function(key) {
                     // response[key].id = key;
@@ -27,11 +33,6 @@ app.controller("savedVinylCtrl", function($scope, $location, AuthFactory, Search
 
     };
     $scope.loadSavedvinyl();
-        // for materialbox images to appear dynamically
-$(document).ready(function(){
-    $('.materialboxed').materialbox();
-  });
-//////////////////////////////////////////////
 
 
     $scope.deletevinylCall = function(vinyl) {
