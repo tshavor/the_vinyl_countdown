@@ -8,7 +8,7 @@ app.factory("SearchDatabaseFactory", function($routeParams, $q, $http, AuthFacto
         // let results = [];
         return $q(function(resolve, reject) {
 
-            $http.get(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${searchText}&api_key=ff6d0bcea5dbfbb8b4f27afac1df217a&format=json&limit=21`)
+            $http.get(`https://ws.audioscrobbler.com/2.0/?method=album.search&album=${searchText}&api_key=ff6d0bcea5dbfbb8b4f27afac1df217a&format=json&limit=21`)
             .success(function(vinylData) {
             // I am getting the correct OBJECT from LastFM!
                 resolve(vinylData);
